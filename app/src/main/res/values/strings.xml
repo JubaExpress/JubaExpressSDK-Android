@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JubaExpressSDKSample</string>
+    <string name="license_key" translatable="false">55DCEA16A6BFA66B737723613B84E</string>
+    <string name="authorization_key" translatable="false">kjxBciKeXc9dta8jbRWqPql03691zTrM</string>
+</resources>
