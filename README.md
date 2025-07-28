@@ -63,7 +63,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("com.github.JubaExpress:JubaExpressSDK:1.0")
+    implementation("com.github.JubaExpress:JubaExpressSDK:{latest_version}")
 }
 ```
 
