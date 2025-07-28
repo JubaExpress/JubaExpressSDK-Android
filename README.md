@@ -12,8 +12,7 @@ This SDK simplifies the integration of JubaExpress payment features into Android
 
 ## 📋 Minimum Requirements
 
-- Android API level 27 or higher
-  minSdk = 27
+- Android API level 27 (minSdk = 27) or higher
 ---
 
 ## 📦 Step 1: Integration
