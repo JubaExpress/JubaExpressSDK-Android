@@ -25,7 +25,6 @@ In your `app/build.gradle.kts`:
 android {
     buildFeatures {
         viewBinding = true
-         compose = true
     }
 }
 ```
