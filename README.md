@@ -25,6 +25,7 @@ In your `app/build.gradle.kts`:
 android {
     buildFeatures {
         viewBinding = true
+         compose = true
     }
 }
 ```
@@ -36,11 +37,11 @@ Our SDK relies on the mentioned libraries. If you are using one of the above lib
 dependencies {
 implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.17")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.2.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    implementation("androidx.security:security-crypto:1.1.0-alpha06")
-    implementation("androidx.compose.material3:material3:1.3.2")
+    implementation("com.github.bumptech.glide:glide:5.0.5")
+    implementation("androidx.security:security-crypto:1.1.0")
+    implementation("androidx.compose.material3:material3:1.4.0")
 }
 ```
 
