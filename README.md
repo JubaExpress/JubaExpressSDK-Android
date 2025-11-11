@@ -189,6 +189,9 @@ startActivity(Intent(this, JESDKFinalReceiptActivity::class.java).apply {
 <color name="colorHeadingTextColor">#custom_value</color>
 <color name="colorButtonText">#custom_value</color>
 <color name="colorButtonBackground">#custom_value</color>
+<color name="transactionsDateFilterTitle">#custom_value</color>
+<color name="colorDialogPositiveText">#custom_value</color>
+<color name="colorDialogNegativeText">#custom_value</color>
 ```
 
 ## 📞 Support
