@@ -36,11 +36,13 @@ Our SDK relies on the mentioned libraries. If you are using one of the above lib
 dependencies {
 implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.2.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.3.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("com.github.bumptech.glide:glide:5.0.5")
     implementation("androidx.security:security-crypto:1.1.0")
     implementation("androidx.compose.material3:material3:1.4.0")
+    implementation("androidx.activity:activity-compose:1.11.0") // Add this dependency only if your existing Activity Compose version is different.
+    implementation("androidx.compose.ui:ui-tooling:1.9.4")  // Add this dependency only if your existing UI tooling version is different.
 }
 ```
 
@@ -125,7 +127,7 @@ Create necessary objects and call the **SDK initialization** method:
 initSDK(
     activity = this,
     sdkEnvironment = SDKEnvironment.Development, // or SDKEnvironment.Production
-    sdkBaseUrl = "",
+    sdkBaseUrl = "" // please contact JubaExpress development team to get it,
     jESDKConfiguration = JESDKConfiguration(
         subscriptionKey = "your_subscription_key",
         partnerKey = "your_partner_key",
@@ -174,6 +176,7 @@ Open the Transaction receipt screen:
 ```kotlin
 startActivity(Intent(this, JESDKFinalReceiptActivity::class.java).apply {
     putExtra("ReferenceId", it.referenceId)
+    putExtra(TransactionCompleted, true **Payment Done** )
     putExtra("ScreenTitle", "Remittance Details")
 })
 ```
