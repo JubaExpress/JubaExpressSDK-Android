@@ -176,7 +176,7 @@ Open the Transaction receipt screen:
 ```kotlin
 startActivity(Intent(this, JESDKFinalReceiptActivity::class.java).apply {
     putExtra("ReferenceId", it.referenceId)
-    putExtra(TransactionCompleted, true) / Set this to **true** once the payment has been successfully completed.
+    putExtra(TransactionCompleted, true) // Set this to **true** once the payment has been successfully completed.
     putExtra("ScreenTitle", "Remittance Details")
 })
 ```
