@@ -127,10 +127,10 @@ Create necessary objects and call the **SDK initialization** method:
 initSDK(
     activity = this,
     sdkEnvironment = SDKEnvironment.Development, // or SDKEnvironment.Production
-    sdkBaseUrl = "" // please contact JubaExpress development team to get it,
+    sdkBaseUrl = "" // please contact the JubaExpress development team to obtain,
     jESDKConfiguration = JESDKConfiguration(
-        subscriptionKey = "your_subscription_key",
-        partnerKey = "your_partner_key",
+        subscriptionKey = "your_subscription_key", // please contact the JubaExpress development team to obtain
+        partnerKey = "your_partner_key", // please contact the JubaExpress development team to obtain
         customerInfo = CustomerInfo(
             cIF = "",
             name = CustomerName(firstName = "", middleName = "", lastName = ""),
@@ -176,7 +176,7 @@ Open the Transaction receipt screen:
 ```kotlin
 startActivity(Intent(this, JESDKFinalReceiptActivity::class.java).apply {
     putExtra("ReferenceId", it.referenceId)
-    putExtra(TransactionCompleted, true **Payment Done** )
+    putExtra(TransactionCompleted, true) / Set this to **true** once the payment has been successfully completed.
     putExtra("ScreenTitle", "Remittance Details")
 })
 ```
