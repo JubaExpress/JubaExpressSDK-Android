@@ -1,16 +1,17 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
     namespace = "com.example.jubaexpresssdksample"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.jubaexpresssdksample"
-        minSdk = 24
-        targetSdk = 34
+        minSdk = 27
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -29,24 +30,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    kotlin {
+        jvmToolchain(17)
     }
     buildFeatures {
         compose = true
         viewBinding = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+
 }
 
 dependencies {
@@ -58,19 +52,20 @@ dependencies {
 
 
     /*import JubaExpress SDK File*/
-    implementation("com.github.JubaExpress:JubaExpressSDK:1.0")
+//    implementation(files("libs/JubaExpressSDK-release.aar"))
+    implementation("com.github.JubaExpress:JubaExpressSDK:1.0.8")
 
     /*Required Libraries*/
-    implementation("com.squareup.retrofit2:retrofit:2.10.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12")
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.3.0")
     //For Pull To Refresh
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     //For Image Loading
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:5.0.5")
 
-    implementation("androidx.security:security-crypto:1.1.0-alpha06")
-    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.security:security-crypto:1.1.0")
+    implementation("androidx.compose.material3:material3:1.4.0")
 
     /*____/////////////___*/
 

@@ -71,6 +71,7 @@ class MainActivity : ComponentActivity() {
         initSDK(
             activity = this,
             sdkEnvironment = SDKEnvironment.Development,
+            sdkBaseUrl = "https://online.jubaexpress.net/JubaExpressSDKAPIs/",
             jESDKConfiguration = JESDKConfiguration(
                 subscriptionKey = getString(R.string.license_key),
                 partnerKey = getString(R.string.authorization_key),
