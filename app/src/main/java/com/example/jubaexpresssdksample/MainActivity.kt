@@ -49,14 +49,32 @@ class MainActivity : ComponentActivity() {
                     getParcelableClass(
                         it, FinalTransactionResponse, JESDKFinalTransactionModel::class.java
                     )?.let {
-                        Log.d("ReferenceId", it.referenceId)
                         Log.d("SecretKey", it.secretKey)
-//                        if (it.secretKey.isNotBlank()) {
-//                            viewBinding.startSDK.text = it.referenceId + it.secretKey
+                        Log.d("ReferenceId", it.referenceId)
+                        Log.d("CurrencyCode", it.currencyCode.orEmpty())
+                        Log.d("SentAmount", it.sentAmount.toString())
+                        Log.d("CommissionAmount", it.commissionAmount.toString())
+                        Log.d("TotalSentAmount", it.totalSentAmount.toString())
+                        Log.d("PayCurrencyCode", it.payCurrencyCode.toString())
+                        Log.d("PayoutAmount", it.payoutAmount.toString())
+                        Log.d("BeneficiaryName", it.beneficiaryName.toString())
+                        Log.d("BeneficiaryMobile", it.beneficiaryMobile.toString())
+                        Log.d("DestinationCountry", it.destinationCountry.toString())
+                        Log.d("DestinationCountryCode", it.destinationCountryCode.toString())
+                        Log.d("PaymentMode", it.paymentMode.toString())
+                        Log.d("AccountNo", it.accountNo.toString())
+                        Log.d("Purpose", it.purpose.toString())
+                        Log.d("SourceOfFunds", it.sourceOfFunds.toString())
+                        Log.d("beneficiaryRelationship", it.beneficiaryRelationship.toString())
+
+                        /* Done With Your Payment Flow After Payment Successful call below code*/
+
+//                        if (it.referenceId.isNotBlank()) {
 //                            startActivity(Intent(
 //                                this, JESDKFinalReceiptActivity::class.java
 //                            ).apply {
 //                                putExtra(ReferenceId, it.referenceId)
+//                                putExtra(TransactionCompleted, true)
 //                                putExtra(ScreenTitle, "Remittance Details")
 //                            })
 //                        } else {
@@ -73,8 +91,8 @@ class MainActivity : ComponentActivity() {
             sdkEnvironment = SDKEnvironment.Development,
             sdkBaseUrl = "https://online.jubaexpress.net/JubaExpressSDKAPIs/",
             jESDKConfiguration = JESDKConfiguration(
-                subscriptionKey = getString(R.string.license_key),
-                partnerKey = getString(R.string.authorization_key),
+                subscriptionKey = getString(R.string.subscriptionKey),
+                partnerKey = getString(R.string.partnerKey),
                 customerInfo = CustomerInfo(
                     cIF = "SlVCQVNXRURFTjp0ZXN0aW5nMkBnbWFpbC5jb20=",
                     name = CustomerName(
