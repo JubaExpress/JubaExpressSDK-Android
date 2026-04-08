@@ -37,12 +37,11 @@ dependencies {
 implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
     implementation("com.squareup.okhttp3:logging-interceptor:5.3.0")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("com.github.bumptech.glide:glide:5.0.5")
     implementation("androidx.security:security-crypto:1.1.0")
     implementation("androidx.compose.material3:material3:1.4.0")
-    implementation("androidx.activity:activity-compose:1.11.0") // Add this dependency only if your existing Activity Compose version is different.
-    implementation("androidx.compose.ui:ui-tooling:1.9.4")  // Add this dependency only if your existing UI tooling version is different.
+    implementation("androidx.activity:activity-compose:1.11.0") // Add this dependency only if missing or the version differs, to avoid conflicts.
+    implementation("androidx.compose.ui:ui-tooling:1.9.4")  // Add this dependency only if missing or the version differs, to avoid conflicts.
 }
 ```
 
@@ -162,8 +161,23 @@ val paymentActivity =
         if (result.resultCode == Activity.RESULT_OK) {
             result.data?.extras?.let {
                 getParcelableClass(it, FinalTransactionResponse, JESDKFinalTransactionModel::class.java)?.let { response ->
-                    Log.d("ReferenceId", response.referenceId)
-                    Log.d("SecretKey", response.secretKey)
+                        Log.d("SecretKey", it.secretKey)
+                        Log.d("ReferenceId", it.referenceId)
+                        Log.d("CurrencyCode", it.currencyCode.orEmpty())
+                        Log.d("SentAmount", it.sentAmount.toString())
+                        Log.d("CommissionAmount", it.commissionAmount.toString())
+                        Log.d("TotalSentAmount", it.totalSentAmount.toString())
+                        Log.d("PayCurrencyCode", it.payCurrencyCode.toString())
+                        Log.d("PayoutAmount", it.payoutAmount.toString())
+                        Log.d("BeneficiaryName", it.beneficiaryName.toString())
+                        Log.d("BeneficiaryMobile", it.beneficiaryMobile.toString())
+                        Log.d("DestinationCountry", it.destinationCountry.toString())
+                        Log.d("DestinationCountryCode", it.destinationCountryCode.toString())
+                        Log.d("PaymentMode", it.paymentMode.toString())
+                        Log.d("AccountNo", it.accountNo.toString())
+                        Log.d("Purpose", it.purpose.toString())
+                        Log.d("SourceOfFunds", it.sourceOfFunds.toString())
+                        Log.d("beneficiaryRelationship", it.beneficiaryRelationship.toString())
                 }
             }
         }
@@ -175,9 +189,9 @@ Open the Transaction receipt screen:
 
 ```kotlin
 startActivity(Intent(this, JESDKFinalReceiptActivity::class.java).apply {
-    putExtra("ReferenceId", it.referenceId)
+    putExtra(ReferenceId,, it.referenceId)
     putExtra(TransactionCompleted, true) // Set this to **true** once the payment has been successfully completed.
-    putExtra("ScreenTitle", "Remittance Details")
+    putExtra(ScreenTitle, "Remittance Details")
 })
 ```
 
@@ -195,6 +209,8 @@ startActivity(Intent(this, JESDKFinalReceiptActivity::class.java).apply {
 <color name="transactionsDateFilterTitle">#custom_value</color>
 <color name="colorDialogPositiveText">#custom_value</color>
 <color name="colorDialogNegativeText">#custom_value</color>
+<color name="colorTransferButtonText">#custom_value</color>
+<color name="colorTransferButtonBackground">#custom_value</color>
 ```
 
 ## 📞 Support
