@@ -40,8 +40,8 @@ implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.github.bumptech.glide:glide:5.0.5")
     implementation("androidx.security:security-crypto:1.1.0")
     implementation("androidx.compose.material3:material3:1.4.0")
-    implementation("androidx.activity:activity-compose:1.11.0") // Add this dependency only if missing or the version differs, to avoid conflicts.
-    implementation("androidx.compose.ui:ui-tooling:1.9.4")  // Add this dependency only if missing or the version differs, to avoid conflicts.
+    implementation("androidx.activity:activity-compose:1.12.4") // Add this dependency only if missing or the version differs, to avoid conflicts.
+    implementation("androidx.compose.ui:ui-tooling:1.10.4")  // Add this dependency only if missing or the version differs, to avoid conflicts.
 }
 ```
 
