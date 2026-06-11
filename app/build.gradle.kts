@@ -53,7 +53,7 @@ dependencies {
 
     /*import JubaExpress SDK File*/
 //    implementation(files("libs/JubaExpressSDK-release.aar"))
-    implementation("com.github.JubaExpress:JubaExpressSDK:1.0.9")
+    implementation("com.github.JubaExpress:JubaExpressSDK:1.0.10")
 
     /*Required Libraries*/
     implementation("com.squareup.retrofit2:retrofit:3.0.0")

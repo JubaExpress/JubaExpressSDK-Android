@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">JubaExpressSDKSample</string>
-    <string name="subscriptionKey" translatable="false">55DCEA16A6BFA66B737723613B84E</string>
-    <string name="partnerKey" translatable="false">kjxBciKeXc9dta8jbRWqPql03691zTrM</string>
+    <string name="subscriptionKey" translatable="false">8F7A2C91D4B6E3F0A15C9B72DE48FA</string>
+    <string name="partnerKey" translatable="false">Qm7vLpXa2cKd9sHtBjR4nYwe5816fZuC</string>
 </resources>
